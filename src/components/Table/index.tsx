@@ -69,10 +69,6 @@ export const headCells: HeadCell[] = [
     label: 'População',
   },
   {
-    id: 'residents',
-    label: 'Residentes',
-  },
-  {
     id: 'rotation_period',
     label: 'Rotação',
   },
@@ -229,9 +225,6 @@ const Table: React.FC<Props> = ({ rows }) => {
                       <TableCell align="left">{row.gravity}</TableCell>
                       <TableCell align="left">{row.orbital_period}</TableCell>
                       <TableCell align="left">{row.population}</TableCell>
-                      <TableCell align="left">
-                        {row.residents.map(resident => resident)}
-                      </TableCell>
                       <TableCell align="left">{row.rotation_period}</TableCell>
                       <TableCell align="left">{row.surface_water}</TableCell>
                       <TableCell align="left">{row.terrain}</TableCell>
