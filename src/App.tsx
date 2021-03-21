@@ -1,4 +1,4 @@
-import "./App.scss";
+import './App.scss';
 
 const App: React.FC = () => {
   return (
