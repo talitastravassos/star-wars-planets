@@ -2,13 +2,13 @@
 import React from 'react';
 
 export interface IPlanet {
+  name: string;
   climate: string;
   created: string;
   diameter: string;
   edited: string;
   films: string[];
   gravity: string;
-  name: string;
   orbital_period: string;
   population: string;
   residents: string[];
@@ -19,7 +19,7 @@ export interface IPlanet {
 }
 
 export interface IState {
-  planets: IPlanet[];
+  data: IPlanet[];
 }
 
 export interface IContextModel {

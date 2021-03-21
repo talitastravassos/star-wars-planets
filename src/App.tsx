@@ -1,12 +1,13 @@
 import { useContext, useEffect } from 'react';
 import { getPlanets } from './actions/StarWarsActions';
 import './App.scss';
+import Table from './components/Table';
 import { StarWarsContext } from './context/StarWarsContext';
 import { getPlanetsFromAPI } from './services/StarWarsService';
 
 const App: React.FC = () => {
   const {
-    state: { planets },
+    state: { data },
     dispatch,
   } = useContext(StarWarsContext);
 
@@ -15,12 +16,13 @@ const App: React.FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    console.log(planets);
-  }, [planets]);
+    console.log(data);
+  }, [data]);
 
   return (
     <div className="App">
       <h1>Hello</h1>
+      <Table rows={data} />
     </div>
   );
 };

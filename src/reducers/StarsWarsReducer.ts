@@ -5,7 +5,7 @@ export const reducer = (state: IState, action: IAction): IState => {
     case 'GET':
       return {
         ...state,
-        planets: [...action.payload],
+        data: [...action.payload],
       };
 
     default:

@@ -3,7 +3,7 @@ import { IContextModel, IState } from '../models/StarWars.types';
 import { reducer } from '../reducers/StarsWarsReducer';
 
 const defaultState: IState = {
-  planets: [],
+  data: [],
 };
 
 export const StarWarsContext = React.createContext({} as IContextModel);
