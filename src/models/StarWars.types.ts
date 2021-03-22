@@ -18,8 +18,16 @@ export interface IPlanet {
   url: string;
 }
 
+export interface IFilterByName {
+  name: string;
+}
+
+export interface IFilter {
+  filterByName: IFilterByName;
+}
 export interface IState {
   data: IPlanet[];
+  filters: IFilter | null;
 }
 
 export interface IContextModel {
@@ -27,4 +35,6 @@ export interface IContextModel {
   dispatch: React.Dispatch<IAction>;
 }
 
-export type IAction = { type: 'GET'; payload: IPlanet[] };
+export type IAction =
+  | { type: 'GET'; payload: IPlanet[] }
+  | { type: 'FILTER'; payload: IFilter };

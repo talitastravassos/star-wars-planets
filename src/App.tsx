@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { getPlanets } from './actions/StarWarsActions';
+import { getPlanets, setFilter } from './actions/StarWarsActions';
 import './App.scss';
 import Table from './components/Table';
 import { StarWarsContext } from './context/StarWarsContext';
-import { getPlanetsFromAPI } from './services/StarWarsService';
+import { buildFilter, getPlanetsFromAPI } from './services/StarWarsService';
 
 const App: React.FC = () => {
   const {
@@ -15,14 +15,13 @@ const App: React.FC = () => {
     getPlanetsFromAPI().then(response => dispatch(getPlanets(response)));
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  const onSearch = (search: string) => dispatch(setFilter(buildFilter(search)));
 
   return (
     <div className="App">
       <h1>Star Wars</h1>
       <Table
+        onSearch={onSearch}
         rows={data}
         columns={[
           {
@@ -52,6 +51,7 @@ const App: React.FC = () => {
           },
           { field: 'surface_water', title: 'Água', type: 'numeric' },
           { field: 'terrain', title: 'Terreno' },
+          { field: 'url', title: 'URL' },
         ]}
         title="Planetas"
       />

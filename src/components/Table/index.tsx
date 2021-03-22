@@ -7,13 +7,10 @@ interface Props {
   rows: IPlanet[];
   title: string;
   columns: Column[];
+  onSearch: (search: string) => void;
 }
 
-const onSearch = (search: string) => {
-  // console.log(search);
-};
-
-const Table: React.FC<Props> = ({ rows, columns, title }) => {
+const Table: React.FC<Props> = ({ rows, columns, title, onSearch }) => {
   return (
     <MaterialTable
       title={title}
@@ -22,7 +19,7 @@ const Table: React.FC<Props> = ({ rows, columns, title }) => {
       options={{
         filtering: false,
       }}
-      onSearchChange={onSearch}
+      onSearchChange={search => onSearch(search)}
     />
   );
 };

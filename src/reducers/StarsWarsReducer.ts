@@ -8,6 +8,12 @@ export const reducer = (state: IState, action: IAction): IState => {
         data: [...action.payload],
       };
 
+    case 'FILTER':
+      return {
+        ...state,
+        filters: { ...action.payload },
+      };
+
     default:
       return state;
   }
