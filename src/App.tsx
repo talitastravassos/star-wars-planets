@@ -21,8 +21,40 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <h1>Hello</h1>
-      <Table rows={data} />
+      <h1>Star Wars</h1>
+      <Table
+        rows={data}
+        columns={[
+          {
+            field: 'name',
+            title: 'Nome',
+          },
+          { field: 'climate', title: 'Clima' },
+          { field: 'created', title: 'Criação', type: 'date' },
+          { field: 'diameter', title: 'Diâmetro', type: 'numeric' },
+          { field: 'edited', title: 'Edição', type: 'date' },
+          { field: 'films', title: 'Filmes' },
+          { field: 'gravity', title: 'Gravidade' },
+          {
+            field: 'orbital_period',
+            title: 'Período Orbital',
+            type: 'numeric',
+          },
+          {
+            field: 'population',
+            title: 'População',
+            type: 'numeric',
+          },
+          {
+            field: 'rotation_period',
+            title: 'Rotação',
+            type: 'numeric',
+          },
+          { field: 'surface_water', title: 'Água', type: 'numeric' },
+          { field: 'terrain', title: 'Terreno' },
+        ]}
+        title="Planetas"
+      />
     </div>
   );
 };

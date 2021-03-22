@@ -1,8 +1,7 @@
 import { IPlanet } from './StarWars.types';
 
-export type Order = 'asc' | 'desc';
-
-export interface HeadCell {
-  id: keyof IPlanet;
-  label: string;
+export interface Column {
+  title: string;
+  field: keyof IPlanet;
+  type?: 'boolean' | 'numeric' | 'date' | 'datetime' | 'time' | 'currency';
 }

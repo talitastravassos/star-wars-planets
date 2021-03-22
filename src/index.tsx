@@ -5,10 +5,8 @@ import { StarWarsProvider } from './context/StarWarsContext';
 import './index.scss';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StarWarsProvider>
-      <App />
-    </StarWarsProvider>
-  </React.StrictMode>,
+  <StarWarsProvider>
+    <App />
+  </StarWarsProvider>,
   document.getElementById('root'),
 );
