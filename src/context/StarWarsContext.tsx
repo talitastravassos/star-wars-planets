@@ -4,7 +4,7 @@ import { IContextModel, IState } from '../models/StarWars.types';
 import { reducer } from '../reducers/StarsWarsReducer';
 import { searchPlanetsFromAPI } from '../services/StarWarsService';
 
-const defaultState: IState = {
+export const defaultState: IState = {
   data: [],
   filters: null,
 };

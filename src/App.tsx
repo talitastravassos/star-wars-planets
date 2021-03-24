@@ -17,6 +17,10 @@ const App: React.FC = () => {
 
   const onSearch = (search: string) => dispatch(setFilter(buildFilter(search)));
 
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <div className="App">
       <h1>Star Wars</h1>
