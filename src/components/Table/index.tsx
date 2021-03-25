@@ -1,5 +1,6 @@
 import MaterialTable from 'material-table';
 import React from 'react';
+import '../../App.scss';
 import { IPlanet } from '../../models/StarWars.types';
 import { Column } from '../../models/Table.types';
 
@@ -18,6 +19,10 @@ const Table: React.FC<Props> = ({ rows, columns, title, onSearch }) => {
       data={rows}
       options={{
         filtering: false,
+        headerStyle: {
+          backgroundColor: '#000000',
+          color: '#eeff00',
+        },
       }}
       onSearchChange={search => onSearch(search)}
     />
